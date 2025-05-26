@@ -1,6 +1,7 @@
 # Viaja-con-Christian
 🌍 Guía turística mundial - App en React
 
+![Vista previa de la app](https://github.com/sergioironhacker/Viaja-con-Christian/blob/main/img-main-readme.png)
 
 # 🌍 Guía Turística Mundial
 
