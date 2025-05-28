@@ -1,0 +1,110 @@
+@tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      :root {
+        --background: 210 30% 8%; /* Deep Ocean Blue */
+        --foreground: 210 25% 95%; /* Soft Cloud White */
+
+        --card: 210 30% 12%; /* Slightly Lighter Ocean Blue for cards */
+        --card-foreground: 210 25% 95%;
+
+        --popover: 210 30% 5%; /* Darker for popovers */
+        --popover-foreground: 210 25% 95%;
+
+        --primary: 170 70% 45%; /* Vibrant Teal/Turquoise */
+        --primary-foreground: 210 30% 10%; /* Dark for text on primary */
+
+        --secondary: 35 90% 55%; /* Warm Coral/Orange */
+        --secondary-foreground: 210 30% 10%; /* Dark for text on secondary */
+
+        --muted: 210 30% 20%; /* Muted blue-gray */
+        --muted-foreground: 210 25% 75%; /* Lighter muted text */
+
+        --accent: 45 90% 50%; /* Sunny Yellow/Gold */
+        --accent-foreground: 210 30% 10%;
+
+        --destructive: 0 70% 50%; /* Clear Red */
+        --destructive-foreground: 210 25% 95%;
+
+        --border: 210 30% 22%; /* Subtle border color */
+        --input: 210 30% 18%; /* Input background */
+        --ring: 170 70% 55%; /* Brighter Teal for focus rings */
+
+        --radius: 0.75rem; /* Slightly larger radius for a modern feel */
+      }
+
+      .dark {
+        /* Keeping dark mode similar for now, can be adjusted if needed */
+        --background: 210 30% 8%;
+        --foreground: 210 25% 95%;
+
+        --card: 210 30% 12%;
+        --card-foreground: 210 25% 95%;
+
+        --popover: 210 30% 5%;
+        --popover-foreground: 210 25% 95%;
+
+        --primary: 170 70% 50%; 
+        --primary-foreground: 210 30% 10%;
+
+        --secondary: 35 90% 60%; 
+        --secondary-foreground: 210 30% 10%;
+        
+        --muted: 210 30% 20%;
+        --muted-foreground: 210 25% 75%;
+
+        --accent: 45 90% 55%;
+        --accent-foreground: 210 30% 10%;
+
+        --destructive: 0 60% 45%;
+        --destructive-foreground: 210 25% 95%;
+
+        --border: 210 30% 22%;
+        --input: 210 30% 18%;
+        --ring: 170 70% 55%;
+      }
+    }
+
+    @layer base {
+      * {
+        @apply border-border;
+      }
+      body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', sans-serif; /* Using Inter as specified */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        @apply font-heading; /* Assuming font-heading is defined in tailwind.config.js */
+      }
+    }
+
+    .glassmorphism {
+      background: hsla(var(--card) / 0.6); /* Use HSL for card background with opacity */
+      backdrop-filter: blur(12px) saturate(150%);
+      -webkit-backdrop-filter: blur(12px) saturate(150%);
+      border: 1px solid hsla(var(--border) / 0.2);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17); /* Subtle shadow */
+    }
+
+    /* Custom scrollbar for a more modern look */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: hsl(var(--background) / 0.5);
+      border-radius: var(--radius);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--primary) / 0.7);
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--primary) / 1);
+    }
